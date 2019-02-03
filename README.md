@@ -282,6 +282,33 @@ constructor(props) {
 ```
 
 ```javascript
+// Another way to bind event to component method
+export class ThisComponent extends React.Component {
+ clickHandler()  {
+  //do smth
+ }
+ render() {
+  return (
+   <div>
+    /* First way */
+    <button onClick={this.clickHandler.bind(this)}> Click me </button>
+    
+    /* Second way */
+    <button onClick={() => this.onMakeOlder()}> Click me </button>
+    
+    /* Function can be passed in as prop
+    In ParentComponent:
+    <ThisComponent passedFunction={this.functionToPass}/>
+    */
+    <button onClick={this.props.passedFunction}> Click me </button>
+   </div>
+  );
+ }
+}
+```
+
+
+```javascript
 // Pass data to callback
 <button onClick={(e) => this.deleteItem(id, e)}>Delete item</button>
 <button onClick={this.deleteItem.bind(this, id)}>Delete item</button>
