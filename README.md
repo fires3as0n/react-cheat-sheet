@@ -290,8 +290,21 @@ constructor(props) {
 ```
 
 ```javascript
-// Another way to bind event to component method
-export class ThisComponent extends React.Component {
+
+// PASSING DATA FROM CHILD
+// And Another way to bind event to component method 
+class ParentCompontnt extends React.Component {
+  functionToPass() {
+    alert("this function was passed by parent to child as prop and executed by child);
+  }
+  render() {
+    return (
+      <ThisComponent passedFunction={this.functionToPass} />
+    );
+  }
+}
+
+class ThisComponent extends React.Component {
  clickHandler()  {
   //do smth
  }
