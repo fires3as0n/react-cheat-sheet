@@ -295,7 +295,7 @@ constructor(props) {
 // And Another way to bind event to component method 
 class ParentCompontnt extends React.Component {
   functionToPass() {
-    alert("this function was passed by parent to child as prop and executed by child);
+    alert("this function was passed by parent to child as prop and executed by child");
   }
   render() {
     return (
