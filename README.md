@@ -69,8 +69,16 @@ function Heading(props) {
 
 ```javascript
 // Stateless Functional Component (with arrow function)
+// Return uses parantheses to achieve better looking returned multi-line markup
 const Heading = (props) => {
-  return <h1>{props.title}</h1>;
+  return (
+    <div>
+      <h1>{props.title}</h1>
+      <p>
+        This is the awesome content of paragraph inside stateless React component
+      </p>
+    </div>
+  );  
 }
 ```
 
