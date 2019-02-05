@@ -828,7 +828,7 @@ function userReducer(state = initialState, action) {
    default:
      return state;
  }
-}
+} 
 ```
 
 **[⬆ Go to top](#table-of-contents)**
