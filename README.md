@@ -336,7 +336,92 @@ class ThisComponent extends React.Component {
 
 ### Passing data from child
 ```javascript
-class Parent
+/* Parent Component */
+import React from "react";
+import {render} from "react-dom";
+
+import {ChildOne} from "./ChildOne";
+import {ChildTwo} from "./ChildTwo";
+
+class Parent extends React.Component
+{
+	constructor()
+	{
+		super();
+		this.state = {
+			homeLink: "Home"
+		}
+	}
+
+	changeHomeLink(newName)	{
+		this.setState({
+			homeLink: newName
+		})
+	}
+
+	render()	{
+		return (
+			<div className="container">
+						<ChildOne homeLink={this.state.homeLink}/>
+						<ChildTwo changeLink={this.changeHomeLink.bind(this)}/>
+			</div>
+		);
+	}
+}
+render(<Parent/>, window.document.getElementById("app"));
+
+/* First Child
+ * Uses state of parent, the state is changed by second child 
+ */
+import React from "react";
+import PropTypes from 'prop-types';
+
+export const ChildOne = (props) =>{
+	return (
+		<p>
+			<span>React sux!</span>
+			<a href="#">{props.homeLink}</a>
+		</p>
+	);
+};
+ChildOne.propTypes = {
+	homeLink: PropTypes.string,
+};
+
+/* Second child
+ * Takes function from parent
+ * executes taken function and provides it at argument
+ * function is defined in parent and changes parent's state
+ * change in state is pushed to FirstChild
+ */
+import React from "react";
+import PropTypes from 'prop-types';
+
+export class ChildTwo extends React.Component {
+	constructor(props) {
+		super();
+		this.state = {
+			homeLinkInChild: "this is a state of child component"
+		};
+	}
+
+	changeHomeLinkInChild() {
+		this.props.changeLink(this.state.homeLinkInChild);
+	}
+
+	render() {
+		return (
+			<p>
+				<span>Babel sux!</span>
+				<button onClick={ () => this.changeHomeLinkInChild()}>Fire event</button>
+			</p>
+		);
+	}
+}
+
+ChildTwo.propTypes = {
+	changeLink: PropTypes.func,
+};
 ```
 
 ### Conditional Rendering
