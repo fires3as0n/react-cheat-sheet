@@ -290,9 +290,7 @@ constructor(props) {
 ```
 
 ```javascript
-
-// PASSING DATA FROM CHILD
-// And Another way to bind event to component method 
+// Another way to bind event to component method 
 class ParentCompontnt extends React.Component {
   functionToPass() {
     alert("this function was passed by parent to child as prop and executed by child");
@@ -335,6 +333,11 @@ class ThisComponent extends React.Component {
 <button onClick={this.deleteItem.bind(this, id)}>Delete item</button>
 ```
 **[⬆ Go to top](#table-of-contents)**
+
+### Passing data from child
+```javascript
+class Parent
+```
 
 ### Conditional Rendering
 ```javascript
