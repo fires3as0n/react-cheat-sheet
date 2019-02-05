@@ -366,7 +366,7 @@ class Parent extends React.Component
 			</div>
 		);
 	}
-}
+}  
 
 render(<Parent/>, window.document.getElementById("app"));
 
