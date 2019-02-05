@@ -35,7 +35,7 @@ ReactDOM.render(
 ### JSX
 ```javascript
 // JSX produce React Element
-const item = <h1>My JSX Element</h1>;
+const item = <h1>My JSX Element</h1>; 
 ```
 
 ```javascript
