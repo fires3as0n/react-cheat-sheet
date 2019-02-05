@@ -345,8 +345,7 @@ import {ChildTwo} from "./ChildTwo";
 
 class Parent extends React.Component
 {
-	constructor()
-	{
+	constructor()	{
 		super();
 		this.state = {
 			homeLink: "Home"
@@ -368,6 +367,7 @@ class Parent extends React.Component
 		);
 	}
 }
+
 render(<Parent/>, window.document.getElementById("app"));
 
 /* First Child
