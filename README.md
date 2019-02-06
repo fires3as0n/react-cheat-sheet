@@ -135,45 +135,49 @@ render() {
 **[⬆ Go to top](#table-of-contents)**
 
 ### Component Lifecycle
+It is a class methods that, if implemented are run in consequent order, thus an additional logic can be hooked in
+
 ```javascript
 componentWillMount() {
-
+  // Before initial rendering
 }
 ```
 
 ```javascript
 componentDidMount() {
+  // After initial rendering
   // Call after the component output has been rendered in the DOM
 }
 ```
 
 ```javascript
 componentWillReceiveProps() {
-
+  // Receives new props
 }
 ```
 
 ```javascript
 shouldComponentUpdate() {
-
+  // Before re-rendering, after receiving new props or state
+  // Can return false to prevent re-rendering
 }
 ```
 
 ```javascript
 componentWillUpdate() {
-
+  // Before re-rendering, after receiving new props or state and if shouldComponentUpdate() don't return false 
 }
 ```
 
 ```javascript
 componentDidUpdate() {
-
+  // After component re-rendered
 }
 ```
 
 ```javascript
 componentWillUnmount() {
-
+  // Before removing component from the dom
 }
 ```
 
