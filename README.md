@@ -345,27 +345,27 @@ import {ChildTwo} from "./ChildTwo";
 
 class Parent extends React.Component
 {
-	constructor()	{
-		super();
-		this.state = {
-			homeLink: "Home"
-		}
-	}
+  constructor()  {
+    super();
+    this.state = {
+      homeLink: "Home"
+    }
+  }
 
-	changeHomeLink(newName)	{
-		this.setState({
-			homeLink: newName
-		})
-	}
+  changeHomeLink(newName)  {
+    this.setState({
+      homeLink: newName
+    })
+  }
 
-	render()	{
-		return (
-			<div className="container">
-						<ChildOne homeLink={this.state.homeLink}/>
-						<ChildTwo changeLink={this.changeHomeLink.bind(this)}/>
-			</div>
-		);
-	}
+  render()  {
+    return (
+      <div className="container">
+            <ChildOne homeLink={this.state.homeLink}/>
+            <ChildTwo changeLink={this.changeHomeLink.bind(this)}/>
+      </div>
+    );
+  }
 }  
 
 render(<Parent/>, window.document.getElementById("app"));
@@ -377,15 +377,15 @@ import React from "react";
 import PropTypes from 'prop-types';
  
 export const ChildOne = (props) =>{
-	return (
-		<p>
-			<span>React sux!</span>
-			<a href="#">{props.homeLink}</a>
-		</p>
-	);
+  return (
+    <p>
+      <span>React sux!</span>
+      <a href="#">{props.homeLink}</a>
+    </p>
+  );
 };
 ChildOne.propTypes = {
-	homeLink: PropTypes.string,
+  homeLink: PropTypes.string,
 };
 
 /* Second child
@@ -398,29 +398,29 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 export class ChildTwo extends React.Component {
-	constructor(props) {
-		super();
-		this.state = {
-			homeLinkInChild: "this is a state of child component"
-		};
-	}
+  constructor(props) {
+    super();
+    this.state = {
+      homeLinkInChild: "this is a state of child component"
+    };
+  }
 
-	changeHomeLinkInChild() {
-		this.props.changeLink(this.state.homeLinkInChild);
-	}
+  changeHomeLinkInChild() {
+    this.props.changeLink(this.state.homeLinkInChild);
+  }
 
-	render() {
-		return (
-			<p>
-				<span>Babel sux!</span>
-				<button onClick={ () => this.changeHomeLinkInChild()}>Fire event</button>
-			</p>
-		);
-	}
+  render() {
+    return (
+      <p>
+        <span>Babel sux!</span>
+        <button onClick={ () => this.changeHomeLinkInChild()}>Fire event</button>
+      </p>
+    );
+  }
 }
 
 ChildTwo.propTypes = {
-	changeLink: PropTypes.func,
+  changeLink: PropTypes.func,
 };
 ```
 
