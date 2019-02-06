@@ -391,11 +391,11 @@ ChildOne.propTypes = {
 };
 /* End First Child
 
-/* Second child
+/* Second Child
  * Takes function from parent
  * executes taken function and provides it at argument
  * function is defined in parent and changes parent's state
- * change in state is pushed to FirstChild
+ * change in state is pushed to First Child
  */
 import React from "react";
 import PropTypes from 'prop-types';
