@@ -389,7 +389,7 @@ export const ChildOne = (props) =>{
 ChildOne.propTypes = {
   homeLink: PropTypes.string,
 };
-/* End First Child
+/* End First Child */
 
 /* Second child
  * Takes function from parent
