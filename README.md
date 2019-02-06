@@ -348,7 +348,7 @@ class Parent extends React.Component
   constructor()  {
     super();
     this.state = {
-      homeLink: "Home"
+      homeLink: "Initial state of link"
     }
   }
 
@@ -369,6 +369,7 @@ class Parent extends React.Component
 }  
 
 render(<Parent/>, window.document.getElementById("app"));
+/* End Parent Component */
 
 /* First Child
  * Uses state of parent, the state is changed by second child 
@@ -379,14 +380,16 @@ import PropTypes from 'prop-types';
 export const ChildOne = (props) =>{
   return (
     <p>
-      <span>React sux!</span>
+      <span>This is a link from FirstChild</span>
       <a href="#">{props.homeLink}</a>
     </p>
   );
 };
+
 ChildOne.propTypes = {
   homeLink: PropTypes.string,
 };
+/* End First Child
 
 /* Second child
  * Takes function from parent
@@ -412,7 +415,7 @@ export class ChildTwo extends React.Component {
   render() {
     return (
       <p>
-        <span>Babel sux!</span>
+        <span>This is the button that fires event that changes link text</span>
         <button onClick={ () => this.changeHomeLinkInChild()}>Fire event</button>
       </p>
     );
@@ -422,6 +425,7 @@ export class ChildTwo extends React.Component {
 ChildTwo.propTypes = {
   changeLink: PropTypes.func,
 };
+/* End Second Child
 ```
 
 ### Conditional Rendering
