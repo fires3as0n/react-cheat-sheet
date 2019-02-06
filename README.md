@@ -391,11 +391,11 @@ ChildOne.propTypes = {
 };
 /* End First Child
 
-/* Second Child
+/* Second child
  * Takes function from parent
  * executes taken function and provides it at argument
  * function is defined in parent and changes parent's state
- * change in state is pushed to First Child
+ * change in state is pushed to FirstChild
  */
 import React from "react";
 import PropTypes from 'prop-types';
@@ -425,7 +425,7 @@ export class ChildTwo extends React.Component {
 ChildTwo.propTypes = {
   changeLink: PropTypes.func,
 };
-/* End Second Child
+/* End Second Child */
 ```
 
 ### Conditional Rendering
